@@ -1,45 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Matessen UF - Hemsida under utveckling</title>
+<title>Matessen UF - The Table Deck</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=EB+Garamond:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root{--black:#0a0a0a; --gold:#c9a227; --wine:#3b0a1a; --cream:#ede6d6; --panel:#141114;}
-  *{box-sizing:border-box;}
-  body{margin:0;background:var(--black);color:var(--cream);font-family:'EB Garamond',serif;min-height:100vh;}
-  header{padding:3rem 1.5rem 1.5rem;text-align:center;border-bottom:1px solid rgba(201,162,39,.3);}
-  h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:2.8rem;margin:0;letter-spacing:.03em;color:var(--gold);}
-  .sub{color:#a99a86;margin:.6rem 0 0;font-style:italic;font-size:1.05rem;}
-  main{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem;}
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;margin-top:2rem;
-        background:rgba(201,162,39,.3);}
-  .card{background:var(--panel);padding:1.8rem 1.5rem;cursor:pointer;transition:background .2s ease;}
-  .card:hover{background:#1c171a;}
-  .card .suitmark{font-size:1.5rem;color:var(--gold);}
-  .card h3{font-family:'Cormorant Garamond',serif;font-weight:600;margin:.6rem 0 .3rem;font-size:1.4rem;}
-  .card p{margin:0;color:#a99a86;font-size:.92rem;}
-  .backbtn{background:none;border:1px solid var(--gold);color:var(--gold);padding:.5rem 1.2rem;
-           font-family:'EB Garamond',serif;font-size:.95rem;cursor:pointer;}
-  .recipe-head span.suit{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold);}
-  .portions{display:flex;align-items:center;gap:1rem;border:1px solid rgba(201,162,39,.4);
-            padding:.9rem 1.3rem;margin:1.6rem 0;width:fit-content;}
-  .portions button{width:32px;height:32px;border-radius:50%;border:1px solid var(--gold);background:none;
-                    color:var(--gold);font-size:1.1rem;cursor:pointer;}
-  .portions span{font-family:'Cormorant Garamond',serif;font-size:1.15rem;min-width:8ch;text-align:center;}
-  h2.recipe-title{font-family:'Cormorant Garamond',serif;font-size:2.1rem;margin:1.3rem 0 .2rem;font-weight:600;}
-  .cols{display:grid;grid-template-columns:1fr 1.4fr;gap:2.5rem;margin-top:1.2rem;}
-  @media(max-width:640px){.cols{grid-template-columns:1fr;}}
-  ul.ing{list-style:none;padding:0;margin:0;}
-  ul.ing li{padding:.55rem 0;border-bottom:1px solid rgba(201,162,39,.15);}
-  h3.section{font-family:'Cormorant Garamond',serif;letter-spacing:.04em;color:var(--gold);
-             border-bottom:1px solid rgba(201,162,39,.3);padding-bottom:.4rem;font-weight:600;}
-  ol.steps{padding-left:1.2rem;}
-  ol.steps li{margin-bottom:1rem;line-height:1.6;}
-  .qr-note{margin-top:2.5rem;padding:1.1rem 1.3rem;border-left:2px solid var(--gold);
-           color:#c9bba3;font-size:.92rem;background:rgba(201,162,39,.05);}
+  :root{--black:#0a0a0a;--gold:#c9a227;--wine:#3b0a1a;--cream:#ede6d6;--panel:#141114;}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--black);color:var(--cream);font-family:'EB Garamond',serif;min-height:100vh}
+  header{padding:3rem 1.5rem 1.5rem;text-align:center;border-bottom:1px solid rgba(201,162,39,.3)}
+  h1{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:2.8rem;margin:0;letter-spacing:.03em;color:var(--gold)}
+  .sub{color:#a99a86;margin:.6rem 0 0;font-style:italic;font-size:1.05rem}
+  main{max-width:900px;margin:0 auto;padding:2rem 1.5rem 4rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;margin-top:2rem;background:rgba(201,162,39,.3)}
+  .card{background:var(--panel);padding:1.8rem 1.5rem;cursor:pointer;transition:background .2s ease}
+  .card:hover{background:#1c171a}
+  .card .suitmark{font-size:1.5rem;color:var(--gold)}
+  .card h3{font-family:'Cormorant Garamond',serif;font-weight:600;margin:.6rem 0 .3rem;font-size:1.4rem}
+  .card p{margin:0;color:#a99a86;font-size:.92rem}
+  .backbtn{background:none;border:1px solid var(--gold);color:var(--gold);padding:.5rem 1.2rem;font-family:'EB Garamond',serif;font-size:.95rem;cursor:pointer}
+  .recipe-head span.suit{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--gold)}
+  .portions{display:flex;align-items:center;gap:1rem;border:1px solid rgba(201,162,39,.4);padding:.9rem 1.3rem;margin:1.6rem 0;width:fit-content}
+  .portions button{width:32px;height:32px;border-radius:50%;border:1px solid var(--gold);background:none;color:var(--gold);font-size:1.1rem;cursor:pointer}
+  .portions span{font-family:'Cormorant Garamond',serif;font-size:1.15rem;min-width:8ch;text-align:center}
+  h2.recipe-title{font-family:'Cormorant Garamond',serif;font-size:2.1rem;margin:1.3rem 0 .2rem;font-weight:600}
+  .cols{display:grid;grid-template-columns:1fr 1.4fr;gap:2.5rem;margin-top:1.2rem}
+  @media(max-width:640px){.cols{grid-template-columns:1fr}}
+  ul.ing{list-style:none;padding:0;margin:0}
+  ul.ing li{padding:.55rem 0;border-bottom:1px solid rgba(201,162,39,.15)}
+  h3.section{font-family:'Cormorant Garamond',serif;letter-spacing:.04em;color:var(--gold);border-bottom:1px solid rgba(201,162,39,.3);padding-bottom:.4rem;font-weight:600}
+  ol.steps{padding-left:1.2rem}
+  ol.steps li{margin-bottom:1rem;line-height:1.6}
+  .qr-note{margin-top:2.5rem;padding:1.1rem 1.3rem;border-left:2px solid var(--gold);color:#c9bba3;font-size:.92rem;background:rgba(201,162,39,.05)}
+  .error{margin-top:2rem;color:#f0b7b7}
 </style>
 </head>
 <body>
@@ -48,50 +43,85 @@
   <p class="sub">Femtio-två kort. Femtio-två recept, alla gömda bakom kortet det tillhör.</p>
 </header>
 <main id="app"></main>
-
 <script>
 const RECIPES = [
-  {id:1, cat:'mexican', card:'A♠', name:'Smoked Carnitas, Slow-Braised', base:4, time:'35 min active',
-   ingredients:[{n:'pork shoulder',a:1.2,u:'kg'},{n:'corn tortillas',a:8,u:'pcs'},{n:'white onion',a:1,u:'pcs'},
-     {n:'cilantro',a:0.5,u:'cup'},{n:'lime',a:2,u:'pcs'},{n:'chipotle in adobo',a:2,u:'tbsp'}],
-   steps:['Rub the pork with salt, chipotle and orange zest.','Braise slowly until it yields to a fork, roughly three hours.',
-     'Shred, then crisp the edges in a hot pan.','Warm the tortillas; layer pork, onion and cilantro.','Finish with lime.']},
-  {id:2, cat:'mexican', card:'7♦', name:'Charred Corn, Cotija and Lime', base:4, time:'20 min',
-   ingredients:[{n:'corn cobs',a:4,u:'pcs'},{n:'cotija cheese',a:0.5,u:'cup'},{n:'mayonnaise',a:3,u:'tbsp'},
-     {n:'chili powder',a:1,u:'tsp'},{n:'lime',a:1,u:'pcs'}],
-   steps:['Char the corn over a hot flame until deeply spotted.','Cut the kernels from the cob.',
-     'Bind with mayonnaise, cotija and chili powder.','Finish with lime and a final dusting of cheese.']},
-  {id:3, cat:'european', card:'K♥', name:'Saffron Paella of the Sea', base:4, time:'50 min',
-   ingredients:[{n:'bomba rice',a:320,u:'g'},{n:'mussels',a:400,u:'g'},{n:'shrimp',a:300,u:'g'},
-     {n:'saffron',a:1,u:'pinch'},{n:'fish stock',a:1,u:'l'},{n:'bell pepper',a:1,u:'pcs'}],
-   steps:['Sweat the pepper, then stir in rice and saffron.','Add hot stock and do not stir again.',
-     'Nestle the seafood into the rice as it cooks.','Allow a crust to form on the base before serving.']},
-  {id:4, cat:'european', card:'3♣', name:'Wild Mushroom Risotto, Aged Parmesan', base:4, time:'40 min',
-   ingredients:[{n:'arborio rice',a:320,u:'g'},{n:'mixed mushrooms',a:400,u:'g'},{n:'parmesan',a:80,u:'g'},
-     {n:'white wine',a:0.2,u:'l'},{n:'vegetable stock',a:1,u:'l'},{n:'butter',a:40,u:'g'}],
-   steps:['Sauté the mushrooms until deeply golden; reserve.','Toast the rice, then deglaze with wine.',
-     'Add hot stock a ladle at a time, stirring often.','Fold in mushrooms, butter and parmesan.']},
-  {id:5, cat:'asian', card:'Q♦', name:'Miso Ramen, Silken Tofu', base:2, time:'30 min',
-   ingredients:[{n:'ramen noodles',a:2,u:'pcs'},{n:'silken tofu',a:200,u:'g'},{n:'white miso',a:3,u:'tbsp'},
-     {n:'dashi stock',a:1,u:'l'},{n:'scallion',a:2,u:'pcs'},{n:'soft egg',a:2,u:'pcs'}],
-   steps:['Whisk the miso into hot dashi, off the heat.','Cook the noodles separately and drain.',
-     'Divide broth and noodles between bowls.','Top with tofu, egg and scallion.']},
-  {id:6, cat:'asian', card:'10♠', name:'Sticky Sesame Eggplant', base:3, time:'25 min',
-   ingredients:[{n:'eggplant',a:2,u:'pcs'},{n:'soy sauce',a:3,u:'tbsp'},{n:'honey',a:2,u:'tbsp'},
-     {n:'garlic',a:2,u:'cloves'},{n:'sesame seeds',a:1,u:'tbsp'},{n:'chili flakes',a:0.5,u:'tsp'}],
-   steps:['Cube the eggplant and fry until golden.','Whisk soy, honey, garlic and chili into a sauce.',
-     'Toss the eggplant until glazed.','Finish with sesame seeds.']},
+  {id:1,cat:'mexican',card:'A♠',name:'Smoked Carnitas, Slow-Braised',base:4,time:'35 min active',
+   ingredients:[{n:'pork shoulder',a:1.2,u:'kg'},{n:'corn tortillas',a:8,u:'pcs'},{n:'white onion',a:1,u:'pcs'},{n:'cilantro',a:0.5,u:'cup'},{n:'lime',a:2,u:'pcs'},{n:'chipotle in adobo',a:2,u:'tbsp'}],
+   steps:['Rub the pork with salt, chipotle and orange zest.','Braise slowly until it yields to a fork, roughly three hours.','Shred, then crisp the edges in a hot pan.','Warm the tortillas; layer pork, onion and cilantro.','Finish with lime.']},
+  {id:2,cat:'mexican',card:'7♦',name:'Charred Corn, Cotija and Lime',base:4,time:'20 min',
+   ingredients:[{n:'corn cobs',a:4,u:'pcs'},{n:'cotija cheese',a:0.5,u:'cup'},{n:'mayonnaise',a:3,u:'tbsp'},{n:'chili powder',a:1,u:'tsp'},{n:'lime',a:1,u:'pcs'}],
+   steps:['Char the corn over a hot flame until deeply spotted.','Cut the kernels from the cob.','Bind with mayonnaise, cotija and chili powder.','Finish with lime and a final dusting of cheese.']},
+  {id:3,cat:'european',card:'K♥',name:'Saffron Paella of the Sea',base:4,time:'50 min',
+   ingredients:[{n:'bomba rice',a:320,u:'g'},{n:'mussels',a:400,u:'g'},{n:'shrimp',a:300,u:'g'},{n:'saffron',a:1,u:'pinch'},{n:'fish stock',a:1,u:'l'},{n:'bell pepper',a:1,u:'pcs'}],
+   steps:['Sweat the pepper, then stir in rice and saffron.','Add hot stock and do not stir again.','Nestle the seafood into the rice as it cooks.','Allow a crust to form on the base before serving.']},
+  {id:4,cat:'european',card:'3♣',name:'Wild Mushroom Risotto, Aged Parmesan',base:4,time:'40 min',
+   ingredients:[{n:'arborio rice',a:320,u:'g'},{n:'mixed mushrooms',a:400,u:'g'},{n:'parmesan',a:80,u:'g'},{n:'white wine',a:0.2,u:'l'},{n:'vegetable stock',a:1,u:'l'},{n:'butter',a:40,u:'g'}],
+   steps:['Sauté the mushrooms until deeply golden; reserve.','Toast the rice, then deglaze with wine.','Add hot stock a ladle at a time, stirring often.','Fold in mushrooms, butter and parmesan.']},
+  {id:5,cat:'asian',card:'Q♦',name:'Miso Ramen, Silken Tofu',base:2,time:'30 min',
+   ingredients:[{n:'ramen noodles',a:2,u:'pcs'},{n:'silken tofu',a:200,u:'g'},{n:'white miso',a:3,u:'tbsp'},{n:'dashi stock',a:1,u:'l'},{n:'scallion',a:2,u:'pcs'},{n:'soft egg',a:2,u:'pcs'}],
+   steps:['Whisk the miso into hot dashi, off the heat.','Cook the noodles separately and drain.','Divide broth and noodles between bowls.','Top with tofu, egg and scallion.']},
+  {id:6,cat:'asian',card:'10♠',name:'Sticky Sesame Eggplant',base:3,time:'25 min',
+   ingredients:[{n:'eggplant',a:2,u:'pcs'},{n:'soy sauce',a:3,u:'tbsp'},{n:'honey',a:2,u:'tbsp'},{n:'garlic',a:2,u:'cloves'},{n:'sesame seeds',a:1,u:'tbsp'},{n:'chili flakes',a:0.5,u:'tsp'}],
+   steps:['Cube the eggplant and fry until golden.','Whisk soy, honey, garlic and chili into a sauce.','Toss the eggplant until glazed.','Finish with sesame seeds.']}
+,
+  // Tomma platser för recept 7–52. Behåll ID-numren så QR-koderna fortsätter fungera.
+  {id:7,cat:'placeholder',card:'7',name:'Recept7',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:8,cat:'placeholder',card:'8',name:'Recept8',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:9,cat:'placeholder',card:'9',name:'Recept9',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:10,cat:'placeholder',card:'10',name:'Recept10',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:11,cat:'placeholder',card:'11',name:'Recept11',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:12,cat:'placeholder',card:'12',name:'Recept12',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:13,cat:'placeholder',card:'13',name:'Recept13',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:14,cat:'placeholder',card:'14',name:'Recept14',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:15,cat:'placeholder',card:'15',name:'Recept15',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:16,cat:'placeholder',card:'16',name:'Recept16',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:17,cat:'placeholder',card:'17',name:'Recept17',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:18,cat:'placeholder',card:'18',name:'Recept18',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:19,cat:'placeholder',card:'19',name:'Recept19',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:20,cat:'placeholder',card:'20',name:'Recept20',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:21,cat:'placeholder',card:'21',name:'Recept21',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:22,cat:'placeholder',card:'22',name:'Recept22',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:23,cat:'placeholder',card:'23',name:'Recept23',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:24,cat:'placeholder',card:'24',name:'Recept24',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:25,cat:'placeholder',card:'25',name:'Recept25',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:26,cat:'placeholder',card:'26',name:'Recept26',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:27,cat:'placeholder',card:'27',name:'Recept27',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:28,cat:'placeholder',card:'28',name:'Recept28',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:29,cat:'placeholder',card:'29',name:'Recept29',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:30,cat:'placeholder',card:'30',name:'Recept30',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:31,cat:'placeholder',card:'31',name:'Recept31',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:32,cat:'placeholder',card:'32',name:'Recept32',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:33,cat:'placeholder',card:'33',name:'Recept33',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:34,cat:'placeholder',card:'34',name:'Recept34',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:35,cat:'placeholder',card:'35',name:'Recept35',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:36,cat:'placeholder',card:'36',name:'Recept36',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:37,cat:'placeholder',card:'37',name:'Recept37',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:38,cat:'placeholder',card:'38',name:'Recept38',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:39,cat:'placeholder',card:'39',name:'Recept39',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:40,cat:'placeholder',card:'40',name:'Recept40',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:41,cat:'placeholder',card:'41',name:'Recept41',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:42,cat:'placeholder',card:'42',name:'Recept42',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:43,cat:'placeholder',card:'43',name:'Recept43',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:44,cat:'placeholder',card:'44',name:'Recept44',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:45,cat:'placeholder',card:'45',name:'Recept45',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:46,cat:'placeholder',card:'46',name:'Recept46',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:47,cat:'placeholder',card:'47',name:'Recept47',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:48,cat:'placeholder',card:'48',name:'Recept48',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:49,cat:'placeholder',card:'49',name:'Recept49',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:50,cat:'placeholder',card:'50',name:'Recept50',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:51,cat:'placeholder',card:'51',name:'Recept51',base:1,time:'Kommer snart',ingredients:[],steps:[]},
+  {id:52,cat:'placeholder',card:'52',name:'Recept52',base:1,time:'Kommer snart',ingredients:[],steps:[]}
 ];
 const CATS = [
-  {key:'mexican', label:'Mexican', blurb:'Bold, smoked, citrus-cut.'},
-  {key:'european', label:'European', blurb:'Slow classics, quietly rich.'},
-  {key:'asian', label:'Asian', blurb:'Umami-led, precisely timed.'},
+  {key:'mexican',label:'Mexican',blurb:'Bold, smoked, citrus-cut.'},
+  {key:'european',label:'European',blurb:'Slow classics, quietly rich.'},
+  {key:'asian',label:'Asian',blurb:'Umami-led, precisely timed.'}
 ];
-let state = {view:'home', cat:null, recipeId:null, portions:null};
-const app = document.getElementById('app');
+const app=document.getElementById('app');
+let state={view:'home',cat:null,recipeId:null,portions:null};
 
-function scale(amount, base, portions){
-  const v = amount * (portions/base);
+function scale(amount,base,portions){
+  const v=amount*(portions/base);
   return (Math.round(v*100)/100).toString();
 }
 function render(){
@@ -100,54 +130,100 @@ function render(){
   if(state.view==='recipe') return renderRecipe();
 }
 function renderHome(){
-  app.innerHTML = `<div class="grid">` + CATS.map(c=>`
-    <div class="card" onclick="goList('${c.key}')">
-      <h3>${c.label}</h3>
-      <p>${c.blurb}</p>
-    </div>`).join('') + `</div>
-    <div class="qr-note">In the finished deck, each card's QR code opens its recipe directly. This menu exists only to browse the full collection here.</div>`;
-}
-function renderList(){
-  const items = RECIPES.filter(r=>r.cat===state.cat);
-  app.innerHTML = `<button class="backbtn" onclick="goHome()">← All cuisines</button>
-    <div class="grid">` + items.map(r=>`
+  app.innerHTML=`<h2>Bläddra efter kategori</h2>
+    <div class="grid">`+CATS.map(c=>`
+      <div class="card" onclick="goList('${c.key}')">
+        <h3>${c.label}</h3><p>${c.blurb}</p>
+      </div>`).join('')+`</div>
+    <div class="qr-note">Välj ett recept nedan. Recept 7–52 är tomma platser som ni kan fylla i senare. Varje recept har en egen adress för QR-koden.</div>
+    <h2>Alla 52 recept</h2>
+    <div class="grid">`+RECIPES.map(r=>`
       <div class="card" onclick="goRecipe(${r.id})">
         <span class="suitmark">${r.card}</span>
         <h3>${r.name}</h3>
-        <p>${r.time} · serves ${r.base}</p>
-      </div>`).join('') + `</div>`;
+        <p>${r.id <= 6 ? `${r.time} · ${r.base} portioner` : 'Tom receptplats · Kommer snart'}</p>
+      </div>`).join('')+`</div>`;
+}
+function renderList(){
+  const items=RECIPES.filter(r=>r.cat===state.cat);
+  const category=CATS.find(c=>c.key===state.cat);
+  app.innerHTML=`<button class="backbtn" onclick="goHome()">← Alla kategorier</button>
+    <h2>${category ? category.label : ''}</h2>
+    <div class="grid">`+items.map(r=>`
+      <div class="card" onclick="goRecipe(${r.id})">
+        <span class="suitmark">${r.card}</span><h3>${r.name}</h3>
+        <p>${r.time} · ${r.base} portioner</p>
+      </div>`).join('')+`</div>`;
 }
 function renderRecipe(){
-  const r = RECIPES.find(x=>x.id===state.recipeId);
-  if(state.portions===null) state.portions = r.base;
-  app.innerHTML = `<button class="backbtn" onclick="goList('${r.cat}')">← Back</button>
+  const r=RECIPES.find(x=>x.id===state.recipeId);
+  if(!r){renderNotFound();return;}
+  if(r.id > 6){
+    app.innerHTML=`<button class="backbtn" onclick="goHome()">← Till alla recept</button>
+      <div class="recipe-head"><span class="suit">Recept ${r.id}</span></div>
+      <h2 class="recipe-title">${r.name}</h2>
+      <p style="color:#a99a86;margin-top:0;font-style:italic;">Det här receptet är inte inlagt ännu.</p>
+      <div class="qr-note">Den här receptplatsen är redo att fyllas med ingredienser och instruktioner. Behåll recept-ID ${r.id} när ni lägger in innehållet, så fungerar QR-kodens adress även senare.</div>`;
+    return;
+  }
+  if(state.portions===null) state.portions=r.base;
+  app.innerHTML=`<button class="backbtn" onclick="goList('${r.cat}')">← Tillbaka</button>
     <div class="recipe-head"><span class="suit">${r.card}</span></div>
     <h2 class="recipe-title">${r.name}</h2>
     <p style="color:#a99a86;margin-top:0;font-style:italic;">${r.time}</p>
     <div class="portions">
-      <button onclick="changePortions(-1)">−</button>
-      <span>${state.portions} guests</span>
-      <button onclick="changePortions(1)">+</button>
+      <button aria-label="Minska portioner" onclick="changePortions(-1)">−</button>
+      <span>${state.portions} portioner</span>
+      <button aria-label="Öka portioner" onclick="changePortions(1)">+</button>
     </div>
     <div class="cols">
-      <div>
-        <h3 class="section">Ingredients</h3>
+      <div><h3 class="section">Ingredienser</h3>
         <ul class="ing">${r.ingredients.map(i=>`<li>${scale(i.a,r.base,state.portions)} ${i.u} ${i.n}</li>`).join('')}</ul>
       </div>
-      <div>
-        <h3 class="section">Method</h3>
+      <div><h3 class="section">Gör så här</h3>
         <ol class="steps">${r.steps.map(s=>`<li>${s}</li>`).join('')}</ol>
       </div>
     </div>`;
 }
-function goHome(){state={view:'home',cat:null,recipeId:null,portions:null};render();}
-function goList(cat){state={view:'list',cat,recipeId:null,portions:null};render();}
-function goRecipe(id){state.view='recipe';state.recipeId=id;state.portions=null;render();}
+function renderNotFound(){
+  app.innerHTML=`<button class="backbtn" onclick="goHome()">← Till startsidan</button>
+    <p class="error">Vi hittar inte receptet. Kontrollera QR-koden eller adressen.</p>`;
+}
+function setRoute(path){location.hash=path;}
+function goHome(){setRoute('/');}
+function goList(cat){setRoute('/kategori/'+cat);}
+function goRecipe(id){setRoute('/recept/'+id);}
 function changePortions(delta){
-  state.portions = Math.max(1, Math.min(24, state.portions+delta));
+  state.portions=Math.max(1,Math.min(24,state.portions+delta));
   render();
 }
-render();
+function handleRoute(){
+  const path=location.hash.slice(1)||'/';
+  const parts=path.split('/').filter(Boolean);
+  if(parts.length===0){
+    state={view:'home',cat:null,recipeId:null,portions:null};
+    render();return;
+  }
+  if(parts[0]==='kategori'&&parts.length===2){
+    const exists=CATS.some(c=>c.key===parts[1]);
+    if(exists){
+      state={view:'list',cat:parts[1],recipeId:null,portions:null};
+      render();return;
+    }
+  }
+  if(parts[0]==='recept'&&parts.length===2){
+    const id=Number(parts[1]);
+    const recipe=RECIPES.find(r=>r.id===id);
+    if(recipe){
+      state={view:'recipe',cat:recipe.cat,recipeId:id,portions:null};
+      render();return;
+    }
+  }
+  state={view:'home',cat:null,recipeId:null,portions:null};
+  renderNotFound();
+}
+window.addEventListener('hashchange',handleRoute);
+handleRoute();
 </script>
 </body>
 </html>
